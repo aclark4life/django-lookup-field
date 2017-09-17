@@ -15,7 +15,11 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from project.app.views import ThingDetailView
+from project.app.views import ThingListView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^(?P<slug>[-\w]+)/$', ThingDetailView.as_view(), name='thing-detail'),
+    url(r'^$', ThingListView.as_view(), name='thing-list'),
 ]
