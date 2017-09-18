@@ -20,6 +20,6 @@ from project.app.views import ThingListView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^(?P<slug>[-\w]+)/$', ThingDetailView.as_view(), name='thing-detail'),
+    url(r'^thing-(?P<pk>[-\w]+)/$', ThingDetailView.as_view(), name='thing-detail'),
     url(r'^$', ThingListView.as_view(), name='thing-list'),
 ]
