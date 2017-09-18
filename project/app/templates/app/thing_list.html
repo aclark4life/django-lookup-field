@@ -1,7 +1,7 @@
 <h1>Things</h1>
 <ul>
 {% for thing in object_list %}
-    <li>{{ thing }}
+    <li><a href="{% url 'thing-detail' thing.pk %}">{{ thing }}</li>
 {% empty %}
     <li>No things yet.</li>
 {% endfor %}
